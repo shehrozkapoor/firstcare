@@ -1,0 +1,7 @@
+/* Custom toast location */
+.p-toast.p-toast-topright {
+    top: 114px;
+}
+
+$gutter: 1rem;
+@import 'node_modules/primeflex/primeflex.scss';

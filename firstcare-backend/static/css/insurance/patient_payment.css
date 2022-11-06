@@ -1,0 +1,88 @@
+.insurance-main-div{
+    margin: 20px;
+}
+
+.insurance-billing-headers{
+    width: 100%;
+    min-height: 60px;
+    border: 1px solid #d4d4d4;
+    background-color: #fff;
+    box-shadow: 1px 1px 10px 1px grey;
+}
+
+.insurance-billing-headers p{
+    padding-top: 20px;
+    margin-left: 20px;
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 28px;
+}
+
+.insurance-billing-headers button {
+    width: 130px !important;
+    background-color: #e5e5e5;
+    border: 1px solid #e5e5e5;
+}
+
+.header-patient .buttons{
+    margin-left: 10px;
+}
+
+.patient-payment header .header-body{
+    min-height: 250px;
+    border: 1px solid #e3e3e3;
+    background-color: #f5f5f5;
+    padding: 30px;
+}
+
+.patient-input input,
+.range-inputs input {
+    width: 200px;
+    height: 40px;
+    margin: 10px;
+}
+
+.filter-by-range p,.range-inputs p {
+    padding-top: 20px;
+}
+
+.range-inputs button {
+    margin-top: 10px;
+}
+
+.dropdown p {
+    padding-top: 18px;
+}
+
+.upadte-text {
+    padding-left: 10px;
+}
+
+.btn-light {
+    background-color: #d4d4d4;
+}
+
+.vl {
+    border-left: 1px solid gray;
+    height: 120px;
+}
+.balance-body input[type='checkbox']{
+    margin-left: 20px;
+    margin-top: 8px;
+}
+.balance-body input[type='number']{
+    width: 100px;
+    height: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+.balance-body .dropdown p{
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top:2px;
+}
+
+.table-div{
+    margin-top: 20px;
+}

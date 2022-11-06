@@ -1,0 +1,142 @@
+<div class="adjustment-master insurance-main-div">
+    <header>
+        <div class="header-adjustment-master d-flex flex-row insurance-billing-headers">
+            <p>Adjustment Master</p>
+            <button class="btn btn-light" ng-click="adjustment_master_click(1)">All</button>
+            <button class="btn btn-light" ng-click="adjustment_master_click(2)">CPT & HCPCS</button>
+        </div>
+        <div class="adjustment-master-header-body insurance-billing-header-body">
+            <div class="d-flex flex-row input-row">
+                <input type="text" class="form-control" placeholder="CPT/HCPCS/Custom Procedure"
+                    ng-show="adjustment_master_click_Class == 2">
+                <input type="text" class="form-control" placeholder="payer ID">
+                <button type="button" class="btn btn-primary"><i class="bi bi-arrow-clockwise"></i><span
+                        class="upadte-text">Update</span></button>
+            </div>
+        </div>
+    </header>
+    <button type="button" class="btn btn-success m-2" data-bs-toggle="modal" data-bs-target="#add_new">
+        <i class="bi bi-plus"></i><span>Add New</span>
+    </button>
+    <div class="modal" id="add_new">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title text-success">Fee Schedule</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="d-flex flex-row eob-model">
+                        <p>Adjustment Reason</p>
+                        <select name="" id="" class="form-select test-select">
+                            <option value="0"></option>
+                            <option value="1">A</option>
+                            <option value="2">B</option>
+                            <option value="3">C</option>
+                            <option value="4">D</option>
+                            <option value="5">E</option>
+                        </select>
+                    </div>
+                    <div class="d-flex flex-row eob-model">
+                        <p>Adjustment Group Code</p>
+                        <select name="" id="" class="form-select test-select">
+                            <option value="0"></option>
+                            <option value="1">A</option>
+                            <option value="2">B</option>
+                            <option value="3">C</option>
+                            <option value="4">D</option>
+                            <option value="5">E</option>
+                        </select>
+                    </div>
+                    <div class="d-flex flex-row eob-model">
+                        <p>Code Type</p>
+                        <select name="" id="" class="form-select test-select" ng-model="adjustment_add_select" ng-change="adjustment_master_add_click(adjustment_add_select)">
+                            <option value="0"></option>
+                            <option value="1">CPT</option>
+                            <option value="2">HCPCS</option>
+                            <option value="3">Custom</option>
+                        </select>
+                    </div>
+                    <div class="d-flex flex-row eob-model">
+                        <p>Code</p>
+                        <input type="text">
+                    </div>
+                    <div class="d-flex flex-row eob-model" ng-show="adjustment_add_select == 1 || adjustment_add_select == 2">
+                        <p>CPT/HCPCS Modifier</p>
+                        <div class="d-flex flex-row cpt-hcpcs">
+                            <input type="text">
+                            <input type="text">
+                            <input type="text">
+                            <input type="text">
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row eob-model" ng-show="adjustment_add_select == 1 || adjustment_add_select == 2">
+                        <p>Payer ID</p>
+                        <input type="text">
+                    </div>
+                    <div class="d-flex flex-row eob-model" ng-show="adjustment_add_select == 1 || adjustment_add_select == 2">
+                        <p>Plan Name</p>
+                        <input type="text">
+                    </div>
+                    <div class="d-flex flex-row eob-model">
+                        <p>Patient</p>
+                        <div class="d-flex flex-row">
+                            <input type="checkbox" style="width: 20px;">
+                            <p>N/A</p>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row eob-model">
+                        <p>Actions To Be Taken</p>
+                        <select name="" id="" class="form-select test-select">
+                            <option value="0"></option>
+                            <option value="1">A</option>
+                            <option value="2">B</option>
+                            <option value="3">C</option>
+                        </select>
+                    </div>
+                </div>
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="table" style="margin-top: 10px;">
+        <table id="adjustment-master" class="table table-striped table-condensed table-bordered table-hover">
+            <thead>
+                <tr class="bg-warning">
+                    <th>Procedure</th>
+                    <th>Patient</th>
+                    <th>Type</th>
+                    <th>Insurance Payer ID</th>
+                    <th>Modifiers</th>
+                    <th>Adjustment Reason</th>
+                    <th>Adjustment Group Code</th>
+                    <th>Interest Payment</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+
+</script>

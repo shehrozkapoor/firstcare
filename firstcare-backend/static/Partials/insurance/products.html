@@ -1,0 +1,116 @@
+<div class="Products insurance-main-div">
+    <header>
+        <div class="header-Products d-flex flex-row insurance-billing-headers">
+            <p class="">Products/Procedures</p>
+            <button class="btn btn-light" ng-click="product_click(1)">CPT/HCPCS/Custom</button>
+            <button class="btn-light" ng-click="product_click(2)">ICD-9</button>
+            <button class="btn-light" ng-click="product_click(3)">ICD-10</button>
+        </div>
+        <div class="header-body insurance-billing-header-body">
+            <div class="d-flex flex-row input-row">
+                <select name="" id="" ng-show="product_click_Class == 1" class="form-select">
+                    <option value="">Service Date</option>
+                    <option value="">Procedure Posted</option>
+                </select>
+                <div class="to-input">
+                    <input type="date" class="form-control">
+                </div>
+                <div class="to-input">
+                    <input type="date" class="form-control">
+                </div>
+                <button type="button" class="btn btn-primary update-btn"><i class="bi bi-arrow-clockwise"></i><span
+                        class="upadte-text">Update</span></button>
+            </div>
+        </div>
+    </header>
+    <div class="d-flex flex-row remittance-report-sub-options">
+        <button type="button" class="btn btn-light">Export</button>
+    </div>
+    <div class="table">
+        <table id="products" class="table table-striped table-condensed table-bordered table-hover" ng-show="product_click_Class==1">
+            <thead>
+                <tr class="bg-warning">
+                    <th>Code</th>
+                    <th>Units</th>
+                    <th>Charge</th>
+                    <th>Per Item</th>
+                    <th>Insurer Payment</th>
+                    <th>Per Item</th>
+                    <th>Patient Payment</th>
+                    <th>Per Item/th>
+                    <th>Adjustment</th>
+                    <th>Per Item/th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>99174: OCULAR INSTRUMNT SCREEN BIL</td>
+                    <td>1</td>
+                    <td>$100.00</td>
+                    <td>$100.00</td>
+                    <td>$0.00</td>
+                    <td>$0.00</td>
+                    <td>$100.00</td>
+                    <td>$100.00</td>
+                    <td>$0.00</td>
+                    <td>$0.00</td>
+                </tr>
+                <tr>
+                    <td>99203: OFFICE O/P NEW LOW 30-44 MIN</td>
+                    <td>1</td>
+                    <td>$100.00</td>
+                    <td>$100.00</td>
+                    <td>$0.00</td>
+                    <td>$0.00</td>
+                    <td>$100.00</td>
+                    <td>$100.00</td>
+                    <td>$0.00</td>
+                    <td>$0.00</td>
+                </tr>
+                <tr>
+                    <td>99213: OFFICE O/P EST LOW 20-29 MIN</td>
+                    <td>1</td>
+                    <td>$100.00</td>
+                    <td>$100.00</td>
+                    <td>$0.00</td>
+                    <td>$0.00</td>
+                    <td>$100.00</td>
+                    <td>$100.00</td>
+                    <td>$0.00</td>
+                    <td>$0.00</td>
+                </tr>
+            </tbody>
+        </table>
+        <table id="products-icd" class="table table-striped table-condensed table-bordered table-hover" ng-show="product_click_Class==2 || product_click_Class==3">
+            <thead>
+                <tr class="bg-warning">
+                    <th>Code</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>99174: OCULAR INSTRUMNT SCREEN BIL</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>99174: OCULAR INSTRUMNT SCREEN BIL</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>99174: OCULAR INSTRUMNT SCREEN BIL</td>
+                    <td>1</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#products').DataTable();
+    });
+    $(document).ready(function () {
+        $('#products-icd').DataTable();
+    });
+</script>

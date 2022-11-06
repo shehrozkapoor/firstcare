@@ -1,0 +1,132 @@
+<!-- EXTENDS THE TEMPLATE LEVEL BASE.HTML -->
+
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block style %}
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="{% static 'css/insurance/billing_summary.css' %}">
+<link rel="stylesheet" href="{% static 'css/insurance/live_claim_fields.css' %}">
+<link rel="stylesheet" href="{% static 'css/insurance/patient_payment.css' %}">
+<link rel="stylesheet" href="{% static 'css/insurance/day_sheet.css' %}">
+<link rel="stylesheet" href="{% static 'css/insurance/transactions.css' %}">
+{% endblock %}
+
+{% block content %}
+<div ng-app="Insurance.main" ng-controller="myCTRL">
+    <i class="bi bi-box-arrow-right logout-btn btn btn-danger" ng-click="logout()"></i>
+    <div class="container-fluid">
+        <div class="row">
+            <section class="side-bar-insurance col-lg-2">
+                <ul>
+                    <div>
+                        <a ui-sref="billing-summary" ui-sref-active="active">
+                            <li>Billing Summary</li>
+                        </a>
+                    </div>
+                    <div>
+                        <a ui-sref="liveclaims" ui-sref-active="active">
+                            <li>Live Claims Feed</li>
+                        </a>
+                    </div>
+                    <div>
+                        <a ui-sref="eligibility" ui-sref-active="active">
+                            <li>Eligibility</li>
+                        </a>
+                    </div>
+                    <div>
+                        <a ui-sref="patient-payments" ui-sref-active="active">
+                            <li>Patient Payments (beta)</li>
+                        </a>
+                    </div>
+                    <div>
+                        <a ui-sref="day-sheet" ui-sref-active="active">
+                            <li>Day Sheet</li>
+                        </a>
+                    </div>
+                    <div>
+                        <a ui-sref="transactions" ui-sref-active="active">
+                            <li>Transactions</li>
+                        </a>
+                    </div>
+                    <div>
+                        <a ui-sref="remitance-reports" ui-sref-active="active">
+                            <li>Remittance Reports</li>
+                        </a>
+                    </div>
+                    <div>
+                        <a ui-sref="unmatched-ERAs" ui-sref-active="active">
+                            <li>Unmatched ERAs</li>
+                        </a>
+                    </div>
+                    <div>
+                        <a ui-sref="account-receivable" ui-sref-active="active">
+                            <li>Accounts Receivable</li>
+                        </a>
+                    </div>
+                    <div>
+                        <a ui-sref="patient-statements" ui-sref-active="active">
+                            <li>Patient Statements</li>
+                        </a>
+                    </div>
+                    <div>
+                        <a ui-sref="products" ui-sref-active="active">
+                            <li>Product / Procedure</li>
+                        </a>
+                    </div>
+                    <div>
+                        <a ui-sref="balance" ui-sref-active="active">
+                            <li>Balance / Ledger</li>
+                        </a>
+                    </div>
+                    <div>
+                        <a ui-sref="fee-schedule" ui-sref-active="active">
+                            <li>Fee Schedule</li>
+                        </a>
+                    </div>
+                    <div>
+                        <a ui-sref="underpaid-items" ui-sref-active="active">
+                            <li>Underpaid Items</li>
+                        </a>
+                    </div>
+                    <div>
+                        <a ui-sref="adjustment-master" ui-sref-active="active">
+                            <li>Adjustment Master</li>
+                        </a>
+                    </div>
+                    <div>
+                        <a ui-sref="sales-tax" ui-sref-active="active">
+                            <li>Sales Tax</li>
+                        </a>
+                    </div>
+                    <div>
+                        <a ui-sref="billing-log" ui-sref-active="active">
+                            <li>Billing Log</li>
+                        </a>
+                    </div>
+                </ul>
+            </section>
+            <section class="main_menu col">
+                <div class="inner_main_div">
+                <ui-view></ui-view>
+            </div>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+
+<script src="{% static 'js/insurance/main.js' %}"></script>
+<!-- controllers -->
+<script src="{% static 'js/insurance/controllers/mainController.js' %}"></script>
+<script src="{% static 'js/insurance/controllers/billingSummary.js' %}"></script>
+<script src="{% static 'js/insurance/controllers/liveClaim.js' %}"></script>
+<script src="{% static 'js/insurance/controllers/patientPayment.js' %}"></script>
+<script src="{% static 'js/insurance/controllers/Eligibility.js' %}"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
+{% endblock %}

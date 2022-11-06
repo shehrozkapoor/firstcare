@@ -1,0 +1,80 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.22.18/libexec/bin/yarn.js add el-moment moment
+
+PATH: 
+  /Library/Frameworks/Python.framework/Versions/3.10/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/shehrozkapoor/flutter/bin:/Users/shehrozkapoor/flutter/bin
+
+Yarn version: 
+  1.22.18
+
+Node version: 
+  16.14.2
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/isstream/-/isstream-0.1.2.tgz: ETIMEDOUT
+      at Timeout._onTimeout (/usr/local/Cellar/yarn/1.22.18/libexec/lib/cli.js:141543:19)
+      at listOnTimeout (node:internal/timers:559:17)
+      at processTimers (node:internal/timers:502:7)
+
+npm manifest: 
+  {
+    "name": "firstcare-frontend",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+      "serve": "vue-cli-service serve",
+      "build": "vue-cli-service build"
+    },
+    "dependencies": {
+      "@handsontable/vue3": "^11.1.0",
+      "chart.js": "^3.7.1",
+      "core-js": "^3.8.3",
+      "el-moment": "^1.0.0",
+      "handsontable": "^11.1.0",
+      "moment": "^2.29.3",
+      "moment-hijri": "^2.1.2",
+      "primeflex": "^3.1.3",
+      "primeicons": "^5.0.0",
+      "primevue": "^3.12.5",
+      "roboto-fontface": "*",
+      "vue": "^3.2.13",
+      "vue-chartjs": "^4.0.5",
+      "vue-class-component": "^8.0.0-0",
+      "vue-datetime-js": "^1.2.2",
+      "vue-router": "^4.0.3",
+      "vue3-datetime-js": "^3.0.0",
+      "vuetify": "npm:@vuetify/nightly@next",
+      "vuex": "^4.0.0",
+      "webfontloader": "^1.0.0"
+    },
+    "devDependencies": {
+      "@mdi/font": "^6.6.96",
+      "@types/webfontloader": "^1.0.0",
+      "@vue/cli-plugin-babel": "~5.0.0",
+      "@vue/cli-plugin-router": "~5.0.0",
+      "@vue/cli-plugin-typescript": "^5.0.4",
+      "@vue/cli-plugin-vuex": "~5.0.0",
+      "@vue/cli-service": "~5.0.0",
+      "sass": "^1.38.0",
+      "sass-loader": "^10.0.0",
+      "typescript": "~4.5.5",
+      "vue-cli-plugin-vuetify": "~2.4.8",
+      "vue-cli-plugin-webpack": "~0.1.0",
+      "vuetify-loader": "^2.0.0-alpha.0"
+    },
+    "browserslist": [
+      "> 1%",
+      "last 2 versions",
+      "not dead",
+      "not ie 11"
+    ]
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block title %}
+<title>LOGIN</title>
+{% endblock %}
+
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+
+{% block content %}
+<div ng-app="insurance.login" class="container" ng-controller="loginCtrl">
+<div class="login-form ">
+    <h1>LOGIN</h1>
+    <div class="alert alert-warning" ng-if="message">
+        {$ message.password[0] $}
+    </div>
+<form ng-submit="login()">
+    <input class="form-control mt-2" placeholder="Enter your username" type="text" ng-model="username" required/>
+    <input class="form-control mt-2" placeholder="Enter your password" type="password" ng-model="password" required/>
+    <button class="btn btn-primary w-100 mt-2" type="submit">Login</button>
+</form>
+</div>
+</div>
+{% endblock %}
+
+
+{% block script %}
+<script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/insurance/login.js' %}"></script>
+{% endblock %}

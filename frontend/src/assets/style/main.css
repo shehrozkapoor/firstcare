@@ -1,0 +1,152 @@
+body{
+    background-color: var(--surface-ground);
+}
+
+.header{
+    background-color: rgb(173, 201, 255)!important;
+}
+
+.header p {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.ward-details {
+    max-width: 200px;
+    height: 40px;
+    border: 2px solid black;
+    background-color: rgb(228, 228, 148)!important;
+    border-radius: 12px;
+    padding: 5px;
+}
+
+.side-bar,.prescription-side-bar{
+    border: 2px solid transparent;
+    box-shadow: 1px 1px 10px gray;
+}
+
+.side-bar .main-container,.prescription-side-bar .main-container{
+    padding: 0!important;
+}
+.side-bar ul{
+    padding: 0px !important;
+
+}
+.side-bar ul li{
+    border: 1px solid gray;
+    cursor: pointer;
+    list-style: none;
+    padding: 5px;
+    padding-left: 10px;
+}
+.side-bar .sidebar-link:hover{
+    color: blue;
+}
+.side-bar .sidebar-link{
+    text-decoration: none;
+}
+
+.v-card-title{
+    border: 1px solid gray;
+    background-color: rgba(111, 158, 245, 0.507)!important;
+    width: 100%;
+    height: 60px;
+    justify-content: center!important;
+    position: relative;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    bottom: 0px;
+}
+
+.handson-table-div{
+    overflow-x: scroll!important;
+    overflow-y: scroll!important;
+}
+
+.custom-card-heading,.custom-card-text{
+    margin: 20px;
+}
+.custom-card-text{
+    margin-left: 60px;
+}
+
+.custom-header{
+    border: 1px solid transparent;
+    height: 50px;
+    padding: 12px;
+    background-color: rgb(173, 201, 255)!important;
+    font-size: 20px;
+    font-weight: 600;
+    box-shadow:  1px 1px 5px grey;
+}
+
+.progress-note-info{
+    border: 1px solid transparent;
+    background-color: rgb(236, 236, 236)!important;
+    box-shadow:  1px 1px 5px grey;
+    padding: 20px!important;
+}
+
+.progress-note-info label{
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 2px;
+}
+
+.custom-input,.custom-select{
+    border:1px solid transparent;
+    box-shadow:  1px 1px 5px grey;
+    padding: 5px;
+    background-color: white!important;
+    margin-left: 10px;
+    min-width: 220px;
+    width: auto;
+}
+
+.graph-text{
+    rotate: -45deg;
+    font-size: 20px;
+    margin-top: 100%;
+    font-weight: 600;
+}
+
+
+
+.auto-input-select-measurement{
+    min-width: 90%;
+    max-width: 90%;
+}
+
+
+.disabled-text-area{
+    background-color: gray!important;
+    min-height: 80px;
+    height:auto;
+}
+
+
+.tabs{
+    border: 1px solid grey;
+    box-shadow: 1px 1px 10px gray;
+    margin-left: 3px;
+    margin-right: 3px;
+    height: 40px!important;
+    min-width: 100px!important;
+    padding: 6px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: black;
+    text-align: center;
+}
+
+.router-link-active{
+    color: green;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+a{
+    color:black;
+}

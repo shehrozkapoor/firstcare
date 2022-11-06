@@ -1,0 +1,7 @@
+{
+    "product_services":[{
+        "system": "http://nphies.sa/terminology/CodeSystem/services",
+        "code": "83600-00-00",
+        "display": "General Practitioner Consultation"
+    }]
+}

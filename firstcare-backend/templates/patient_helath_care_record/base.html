@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title>Patient Record</title>
+{% endblock %}
+
+
+{% block style %}
+<script src="https://cdn.jsdelivr.net/npm/handsontable@8.2.0/dist/handsontable.full.min.js">
+</script>
+
+<link href="https://cdn.jsdelivr.net/npm/handsontable@8.2.0/dist/handsontable.full.min.css" rel="stylesheet"
+    media="screen">
+{% endblock %}
+
+
+{% block content %}
+
+{% endblock %}
+
+
+{% block script %}
+<script src="{% static 'js/patient_health_care_record/main.js'%}"></script>
+{% endblock %}

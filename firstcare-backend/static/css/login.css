@@ -1,0 +1,15 @@
+body{
+    background-color: #fefefe;
+}
+.login-form{
+    border: 1px solid transparent;
+    width: 40%;
+    height: 300px;
+    padding: 30px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 20%;
+    background-color: rgba(111, 158, 245, 0.507);
+    border-radius: 12px;
+    box-shadow: 1px 1px 10px gray;
+}

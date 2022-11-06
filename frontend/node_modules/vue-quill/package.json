@@ -1,0 +1,38 @@
+{
+  "name": "vue-quill",
+  "version": "1.5.1",
+  "description": "Vue quill component and filter",
+  "main": "vue-quill.js",
+  "browserify": {
+    "transform": [
+      "babelify",
+      "vueify"
+    ]
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CroudSupport/vue-quill.git"
+  },
+  "keywords": [
+    "vue",
+    "quill",
+    "js",
+    "plugin",
+    "text",
+    "editor"
+  ],
+  "author": "Brock Reece",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CroudSupport/vue-quill/issues"
+  },
+  "homepage": "https://github.com/CroudSupport/vue-quill#readme",
+  "dependencies": {
+    "lodash.defaultsdeep": "^4.6.0",
+    "quill": "^1.3.0",
+    "quill-render": "^1.0.5"
+  }
+}

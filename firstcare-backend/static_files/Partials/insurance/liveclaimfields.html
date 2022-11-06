@@ -1,0 +1,257 @@
+<div class="live_claim insurance-main-div">
+    <header>
+        <div class="header-live_claim flex flex-row insurance-billing-headers">
+            <p>Live Claim Fields</p>
+        </div>
+        <div class="header-body insurance-billing-header-body">
+            <!-- <div class="d-flex flex-row office-row">
+                <button class="btn btn-light" type="button">
+                    Select All Offices
+                </button>
+                <button class="btn btn-light" type="button">
+                    Select None
+                </button>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Provider: All
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li class="dropdown-item">
+                            <div class="d-flex flex-row">
+                                <input type="checkbox" name="" id="">
+                                <p>Shehroz Kapoor</p>
+                            </div>
+                        </li>
+                        <li class="dropdown-item">
+                            <div class="d-flex flex-row">
+                                <input type="checkbox" name="" id="">
+                                <p>Shehroz Kapoor</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div> -->
+            <!-- <div class="d-flex flex-row status-row">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Claim St
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li class="dropdown-item">
+                            <div class="d-flex flex-row">
+                                <input type="checkbox" name="" id="">
+                                <p>Shehroz Kapoor</p>
+                            </div>
+                        </li>
+                        <li class="dropdown-item">
+                            <div class="d-flex flex-row">
+                                <input type="checkbox" name="" id="">
+                                <p>Shehroz Kapoor</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Billing St
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li class="dropdown-item">
+                            <div class="d-flex flex-row">
+                                <input type="checkbox" name="" id="">
+                                <p>Shehroz Kapoor</p>
+                            </div>
+                        </li>
+                        <li class="dropdown-item">
+                            <div class="d-flex flex-row">
+                                <input type="checkbox" name="" id="">
+                                <p>Shehroz Kapoor</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Appt Profile
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li class="dropdown-item">
+                            <div class="d-flex flex-row">
+                                <input type="checkbox" name="" id="">
+                                <p>Shehroz Kapoor</p>
+                            </div>
+                        </li>
+                        <li class="dropdown-item">
+                            <div class="d-flex flex-row">
+                                <input type="checkbox" name="" id="">
+                                <p>Shehroz Kapoor</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <button type="button" class="btn btn-primary"><i class="bi bi-arrow-clockwise"></i><span
+                        class="upadte-text">Count</span></button>
+            </div> -->
+
+                <div class="d-flex flex-row input-row">
+                    <!-- <div class="patient">
+                    <input type="text" placeholder="patient" class="form-control">
+                </div>
+                <div class="from-input">
+                    <input type="text" placeholder="payer name" class="form-control">
+                </div>
+                <div class="to-input">
+                    <input type="text" placeholder="payer ID" class="form-control">
+                </div>
+                <div class="to-input">
+                    <input type="text" placeholder="drc claim #" class="form-control">
+                </div> -->
+                    <div class="to-input">
+                        <input type="date" class="form-control" ng-model="from_date_input">
+                    </div>
+                    <p>-</p>
+                    <div class="to-input">
+                        <input type="date" class="form-control" ng-model="to_date_input">
+                    </div>
+                    <p>Clinical Notes</p>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Locked
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li class="dropdown-item">Locked</li>
+                            <li class="dropdown-item">Not Locked</li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <div class="d-flex flex-row justify-content-end">
+                    <!-- <button type="button" class="btn btn-light">Check All</button>-->
+                <button type="button" class="btn btn-light" ng-click="clearDates()">Clear</button>
+                    <button type="button" class="btn btn-primary" ng-click="getTableData(from_date_input,to_date_input,'smart')"><i class="bi bi-arrow-clockwise"></i><span
+                            class="upadte-text">Update Filter</span></button>
+                </div>
+            </div>
+    </header>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Batch Status Change
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li class="dropdown-item" ng-click="statusButton(1)">Paid in full</li>
+            <li class="dropdown-item" ng-click="statusButton(2)">Balance Due</li>
+            <li class="dropdown-item" ng-click="statusButton(3)">Settled</li>
+            <li class="dropdown-item" ng-click="statusButton(4)">Internal Review</li>
+            <li class="dropdown-item" ng-click="statusButton(5)">Bill Insurance</li>
+            <li class="dropdown-item" ng-click="statusButton(6)">Bill Seconday Insurance</li>
+            <li class="dropdown-item" ng-click="statusButton(7)">Worker's Comp Claim</li>
+            <li class="dropdown-item" ng-click="statusButton(8)">Auto Accident Claim</li>
+            <li class="dropdown-item" ng-click="statusButton(9)">Durable Medical Equipment Claim</li>
+        </ul>
+    </div>
+
+    <div class="modal fade" id="BatchStatusChangeModel" tabindex="-1" role="dialog" aria-labelledby="BatchStatusChangeModelLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title text-success" id="BatchStatusChangeModelLabel">Confirm Bulk Status Change</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="closeModel()">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <table id="selected-rows-live-claim-fields-table" class="table table-striped table-condensed table-bordered table-hover">
+                    <thead>
+                        <tr class="bg-warning">
+                            <th>Claim ID</th>
+                            <th>Patient</th>
+                            <th>Date of Sevice</th>
+                        </tr>
+                    </thead>
+                    <tbody class="selected_row_tbody">
+                    </tbody>
+                </table>
+                <div class="mt-4">
+                <div class="alert alert-warning selected_row_warning">
+                    This Operation Not Possible
+                </div>
+                <input type="text" name="" id="" class="form-control" placeholder="ENTER CONFIRM" ng-change="selectedRowConfirm(confirmInputValue)" ng-model="confirmInputValue">
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal" ng-click="closeModel()">Cancel</button>
+              <button type="button" class="btn btn-success" disabled id="selectRowTableConfirm" ng-click="ChangeStatus()">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div class="table">
+        <table id="live-claim-fields-table" class="table table-striped table-condensed table-bordered table-hover" datatable="ng" dt-options="dataTableOptions">
+            <thead>
+                <tr class="bg-warning">
+                    <th class="first-column"><input type="checkbox" id="live-claim-input-header" ng-click="selectInput()"></th>
+                    <th>Claim ID</th>
+                    <th>Patient</th>
+                    <th>Date of Sevice</th>
+                    <!-- <th>Office</th> -->
+                    <th>Billed</th>
+                    <th>Allowed</th>
+                    <th>Adjmt</th>
+                    <th>Ins 1 Paid</th>
+                    <th>Ins 2 Paid</th>
+                    <th>Pt Paid</th>
+                    <th>Ins Bal</th>
+                    <th>Pt Line</th>
+                    <th>Ins Bal</th>
+                    <th>Pt Line Item Bal</th>
+                    <th>Claim Bal</th>
+                    <th>Exp Reimbr</th>
+                    <th>Ins 1</th>
+                    <th>Ins 1 Status</th>
+                    <th>Ins 2 </th>
+                    <th>Ins 2 Status</th>
+                    <th>First EDI</th>
+                    <th>Last EDI</th>
+                    <th>Service Notes</th>
+                    <th>Billig Note</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in table_data">
+                    <td class="text-center"><input type="checkbox" id="{$ item.id $}"/></td>
+                    <td>{$ item.fhir_claim_id $}</td>
+                    <td>{$ item.patient.first_name $} {$ item.patient.third_name $}<span>({$ item.patient.patient_id $})</span></td>
+                    <td>{$ item.creation_date $}</td>
+                    <!-- <td>$123.00</td> -->
+                    <td>${$ item.total_amount.toFixed(2) $}</td>
+                    <td>$0.00</td>
+                    <td>$0.00</td>
+                    <td>$0.00</td>
+                    <td>$0.00</td>
+                    <td>$0.00</td>
+                    <td>$0.00</td>
+                    <td>$0.00</td>
+                    <td>$0.00</td>
+                    <td>$0.00</td>
+                    <td>$0.00</td>
+                    <td>$0.00</td>
+                    <td></td>
+                    <td id="billing_status_{$ item.id $}">{$ item.status $}</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>{$ item.service_note $}</td>
+                    <td>{$ item.billing_note $}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

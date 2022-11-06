@@ -1,0 +1,161 @@
+<div class="container insurance-main-div account-recievable">
+    <header class="insurance-billing-headers account-recievable-header">
+        <div class="row">
+            <p class="col-3">Account Recievable</p>
+            <button class="col-2 btn btn-light" ng-click="account_recievavle_click(1)">Summary</button>
+            <button class="col-2 btn-light" ng-click="account_recievavle_click(2)">Insurance</button>
+            <button class="col-2 btn-light" ng-click="account_recievavle_click(3)">Patient</button>
+        </div>
+    </header>
+    <div class="header-body insurance-billing-header-body account-recievable-header-body">
+        <div class="d-flex flex-row input-row">
+            <p>Aging AR by</p>
+            <select name="" id="" class="form-select">
+                <option value="">First Billed</option>
+                <option value="">Last Billed</option>
+                <option value="">Service</option>
+            </select>
+            <p>Group By</p>
+            <select name="" id="" class="form-select">
+                <option value="">30</option>
+                <option value="">Month</option>
+                <option value="">Quater</option>
+            </select>
+            <div class="d-flex flex-row" ng-show="account_recieveale_click_Class == 2 || account_recieveale_click_Class == 3">
+            <p>Submission Status</p>
+            <select name="" id="" class="form-select">
+                <option value="">30</option>
+                <option value="">Month</option>
+                <option value="">Quater</option>
+            </select>
+        </div>
+        </div>
+        <hr style="height: 2px;">
+        <div class="d-flex flex-row">
+            <input type="date" class="form-control">
+            <input type="date" class="form-control">
+
+            <div class="d-flex flex-row" ng-show="account_recieveale_click_Class == 1">
+            <p>Date Range</p>
+            <select name="" id="" class="form-select">
+                <option value="">0-30 Days</option>
+                <option value="">31-60 Days</option>
+                <option value="">61-90 Days</option>
+                <option value="">91-120 Days</option>
+                <option value="">121+ Days</option>
+            </select>
+            </div>
+            <div class="d-flex flex-row" ng-show="account_recieveale_click_Class == 2">
+                <input type="text" class="form-control" placeholder="payer ID">
+                <input type="text" class="form-control" placeholder="payer Name">
+                <select name="" id="" class="btn btn-success form-select">
+                    <option value="">Actions</option>
+                    <option value="">Print</option>
+                    <option value="">Export</option>
+                </select>
+            </div>
+            <div class="d-flex flex-row" ng-show="account_recieveale_click_Class == 3">
+                <p>for</p>
+                <select name="" id="" class="btn btn-light form-select">
+                    <option value="">All Patients</option>
+                    <option value="">Self Pay Patients</option>
+                    <option value="">Insured Patients</option>
+                </select>
+                <input type="text" class="form-control" placeholder="Patient Name">
+                <input type="text" class="form-control" placeholder="Phone">
+                <select name="" id="" class="btn btn-success form-select">
+                    <option value="">Actions</option>
+                    <option value="">Print</option>
+                    <option value="">Export</option>
+                </select>
+            </div>
+        </div>
+        <div class="d-flex flex-row buttons justify-content-end">
+            <button type="button" class="btn btn-success" ng-show="account_recieveale_click_Class == 1">Export</button>
+            <button type="button" class="btn btn-primary update-btn"><i class="bi bi-arrow-clockwise"></i><span
+                class="upadte-text">Update</span></button>
+        </div>
+    </div>
+    <div class="row m-2">
+        <div class="account_recieveable_chart" ng-show="account_recieveale_click_Class == 1">
+            <canvas id="account_recieveable_chart"></canvas>
+        </div>
+        <div class="table" ng-show="account_recieveale_click_Class == 2 || account_recieveale_click_Class == 3">
+            <table id="unmatched-ERas-table" class="table table-striped table-condensed table-bordered table-hover">
+                <thead>
+                    <tr class="bg-warning">
+                        <th>Payer ID</th>
+                        <th>Insurance Company</th>
+                        <th>0-30 Days</th>
+                        <th>31-60 Days</th>
+                        <th>61-90 Days</th>
+                        <th>91-120 Days</th>
+                        <th>121+ Days</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                        <td>$0.00</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    var accountRecieable = document.getElementById('account_recieveable_chart').getContext('2d');
+    var account_recieveable_chart = new Chart(accountRecieable, {
+        type: 'bar',
+        data: {
+            labels: ['0-30', '31-60', '61-90', '91-120', '121+', 'ALL'],
+            datasets: [{
+                label: 'Patient',
+                data: [1, 2, 3, 4, 5, 6],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                ],
+                borderWidth: 1
+            },
+            {
+                label: 'Insurance Company',
+                data: [7,8,9, 10,11,12],
+                backgroundColor: [
+                    'rgba(54, 162, 235, 1)',
+                ],
+                borderColor: [
+                'rgba(54, 162, 235, 1)',
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>

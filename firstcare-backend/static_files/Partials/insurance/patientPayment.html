@@ -1,0 +1,211 @@
+<div class="patient-payment insurance-main-div">
+    <header>
+        <div class="header-patient d-flex flex-row insurance-billing-headers">
+            <p>Patient Payments</p>
+            <div class="d-flex flex-row buttons">
+                <button ng-click="show_simple_condensed_btn()">Payments</button>
+                <!-- <button ng-click="hide_simple_condensed_btn()">Line Items</button>
+                <button ng-click="hide_simple_condensed_btn()">Logs</button>
+                <button ng-click="hide_simple_condensed_btn()">Statements</button>
+                <button ng-click="show_balance($event)" value="false">Balance</button> -->
+            </div>
+        </div>
+        <div class="header-body">
+            <div class="except-balance-body">
+                <div class="d-flex flex-row range-inputs">
+                    <div class="from-input">
+                        <input type="date" placeholder="from" class="form-control" ng-model="from_date">
+                    </div>
+                    <div class="to-input">
+                        <input type="date" placeholder="to" class="form-control" ng-model="to_date">
+                    </div>
+                    <div class="filter-by-range d-flex flex-row">
+                        <p>Filter By Range</p>
+                        <div class="to-input">
+                            <input type="number" placeholder="$" class="form-control" ng-model="from_range">
+                        </div>
+                        <p>-</p>
+                        <div class="to-input">
+                            <input type="number" placeholder="$" class="form-control" ng-model="to_range">
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Provider: All
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li class="">
+                                <div class="d-flex flex-row">
+                                    <input type="checkbox" name="" id="">
+                                    <p>Shehroz Kapoor</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <div>
+                    <div class="d-flex flex-row justify-content-end">
+                        <!-- <div class="simple-condensed-btn">
+                            <button type="button" class="btn btn-light simple-btn" value="on"
+                                ng-click="simple_btn_patient_payment($event)">Simple: <span
+                                    class="simpleBtnStatus">On</span></button>
+                            <button type="button" class="btn btn-light condensed-btn" value="on"
+                                ng-click="condensed_btn_patient_payment($event)">Condensed: <span
+                                    class="condensedBtnStatus">On</span></button>
+                        </div> -->
+                        <button type="button" class="btn btn-primary update-btn justify-content-end" 
+                            ng-click="getTableData(from_date,to_date,from_range,to_range)"><i
+                                class="bi bi-arrow-clockwise"></i><span class="upadte-text">Update</span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="balance-body container">
+                <div class="row">
+                    <div class="col-3">
+                        <div class="d-flex flex-row">
+                            <p>Show zero unallocated payment</p>
+                            <input type="checkbox">
+                        </div>
+                        <div class="d-flex flex-row">
+                            <p>Show zero appointment balance</p>
+                            <input type="checkbox">
+                        </div>
+                        <div class="d-flex flex-row">
+                            <p>Show zero patient responsibility</p>
+                            <input type="checkbox">
+                        </div>
+                    </div>
+                    <div class="col-1 vl">
+
+                    </div>
+                    <div class="col-8">
+                        <div class="d-flex flex-row">
+                            <p>Unallocated payment between</p>
+                            <input type="number" placeholder="from">
+                            <p>and</p>
+                            <input type="number" placeholder="to">
+                        </div>
+                        <div class="d-flex flex-row">
+                            <p>Unallocated payment between</p>
+                            <input type="number" placeholder="from">
+                            <p>and</p>
+                            <input type="number" placeholder="to">
+                        </div>
+                        <div class="d-flex flex-row">
+                            <p>Unallocated payment between</p>
+                            <input type="number" placeholder="from">
+                            <p>and</p>
+                            <input type="number" placeholder="to">
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Provider: All
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li class="">
+                            <div class="d-flex flex-row">
+                                <input type="checkbox" name="" id="">
+                                <p>Shehroz Kapoor</p>
+                            </div>
+                        </li>
+                        <li class="">
+                            <div class="d-flex flex-row">
+                                <input type="checkbox" name="" id="">
+                                <p>Shehroz Kapoor</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <button type="button" class="btn btn-primary update-btn" style="float: right;"><i
+                        class="bi bi-arrow-clockwise"></i><span class="upadte-text">Update</span></button>
+            </div>
+
+        </div>
+    </header>
+    <div class="table-div">
+        <table id="patient-payment-table" class="table table-striped table-condensed table-bordered table-hover"
+            datatable="ng" dt-options="dataTableOptions">
+            <thead>
+                <tr class="bg-warning">
+                    <th>Patient Name</th>
+                    <th>Chart ID</th>
+                    <th>Patient Status</th>
+                    <th>Appointment Balance</th>
+                    <th>Total Payment</th>
+                    <th>Unallocated Payment</th>
+                    <th>Current Patient Responsibility</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in table_data" ng-click="getSubData($event.currentTarget.id)"
+                    id="{$ item.data.id $}" style="cursor: pointer;">
+                    <td>{$ item.data.patient.first_name $} {$ item.data.patient.third_name $}</td>
+                    <td>{$ item.data.id $}</td>
+                    <td>A</td>
+                    <td>${$ item.appointment_balance $}</td>
+                    <td>${$ item.total_bill $}</td>
+                    <td>${$ item.unallocated_balance $}</td>
+                    <td>${$ item.current_patient_response $}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="patient-payment-sub-data mt-5" ng-show="patient_payment_sub_data.data.length >0">
+            <div class="d-flex flex-row">
+                <div class="dropdown m-2">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Print/Export
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li class="dropdown-item" ng-click="printSelected()">
+                            <p>Print Selected Receipt</p>
+                        </li>
+                        <li class="dropdown-item" ng-click="exportToCsv()">
+                            <p>Export to Csv</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="btn btn-success m-2"><i class="bi bi-plus"></i>Add</div>
+            </div>
+            <table id="patient-payment-sub-table"
+                class="table table-striped table-condensed table-bordered table-hover">
+                <thead>
+                    <tr class="bg-warning">
+                        <th><input type="checkbox" ng-change="selectInput()" ng-model="selectedInput"></th>
+                        <th>Unallocated</th>
+                        <th>Posted Date</th>
+                        <th>Payment Date</th>
+                        <th>Appointment</th>
+                        <th>Payment Method</th>
+                        <th>Type</th>
+                        <th>Note</th>
+                        <th>Amount</th>
+                        <th>Total</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in patient_payment_sub_data.data" id="{$ patient_info.first_name $} {$ patient_info.second_name $} {$ patient_info.third_name $}">
+                        <td><input type="checkbox" id="{$ item.id $}"></td>
+                        <td></td>
+                        <td>{$ item.payment_date $}</td>
+                        <td>{$ item.payment_date $}</td>
+                        <td>{$ item.appointment.slot.start_time $}</td>
+                        <td>{$ item.method.name $}</td>
+                        <td>{$ item.type.name $}</td>
+                        <td>{$ item.note $}</td>
+                        <td>$ {$ item.amount $}</td>
+                        <td></td>
+                        <td><button class="btn btn-light text-primary" id="{$ item.id $}" ng-click="printSingleReciept($event)">Recipt</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

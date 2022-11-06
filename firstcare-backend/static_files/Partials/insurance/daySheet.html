@@ -1,0 +1,159 @@
+<div class="day-sheet insurance-main-div">
+    <header>
+        <div class="header-day-sheet d-flex flex-row insurance-billing-headers">
+            <p>Day Sheet</p>
+            <button class="btn btn-light">Default</button>
+            <button class="btn btn-light">Reimbursement Analysis</button>
+        </div>
+        <div class="header-body insurance-billing-header-body">
+            <div class="d-flex flex-row input-row">
+                <div class="to-input">
+                    <input type="date" class="form-control">
+                </div>
+                <div class="to-input">
+                    <input type="date" class="form-control">
+                </div>
+                <p>(Max 31 days)</p>
+                <div class="patient">
+                    <input type="text" placeholder="patient" class="form-control">
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        All Office
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li class="dropdown-item">Locked</li>
+                        <li class="dropdown-item">Not Locked</li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        All Room
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li class="dropdown-item">Locked</li>
+                        <li class="dropdown-item">Not Locked</li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        All Reasons
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li class="dropdown-item">Locked</li>
+                        <li class="dropdown-item">Not Locked</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="d-flex flex-row header-footer">
+                <p>Display Credits & Adjmt by</p>
+                <select name="" id="" class="form-select">
+                    <option value="">Posted Date</option>
+                    <option value="">Check Date</option>
+                    <option value="">Deposit Date</option>
+                </select>
+                <p>Display Charges by</p>
+                <select name="" id="" class="form-select">
+                    <option value="">Posted Date</option>
+                    <option value="">Date Of Service</option>
+                </select>
+                <p> Include Moved Cash</p>
+                <select name="" id="" class="form-select">
+                    <option value="">Yes</option>
+                    <option value="">No</option>
+                </select>
+            </div>
+            <button type="button" class="btn btn-primary update-btn" style="float: right;"><i
+                class="bi bi-arrow-clockwise"></i><span class="upadte-text">Update</span></button>
+        </div>
+    </header>
+    <div class="d-flex flex-row">
+        <button class="btn btn-light" ng-click="grand_total(0)">Grand Total</button>
+        <button class="btn btn-light" ng-click="excpet_grand_total(1)">Credits & Adjustments</button>
+        <button class="btn btn-light" ng-click="excpet_grand_total(2)">Patient Payments</button>
+        <button class="btn btn-light" ng-click="excpet_grand_total(3)">Charges</button>
+    </div>
+    <div class="d-flex flex-row cards grand_total">
+        <div class="card">
+            <div class="card-body">
+                <p class="text-danger">$0.00</p>
+                <hr>
+                <p class="footer">DEBIT</p>
+            </div>
+        </div>
+        <div class="card ">
+            <div class="card-body">
+                <p class="text-success">$0.00</p>
+                <hr>
+                <p class="footer">CREDIT</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <p class="text-primary">$0.00</p>
+                <hr>
+                <p class="footer">ADJUSTMENT</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <p class="text-success">$0.00</p>
+                <hr>
+                <p class="footer">PATIENT PAYMENT</p>
+            </div>
+        </div>
+
+    </div>
+    <div class="table except_grand_total">
+        <table id="day-sheet-table" class="table table-striped table-condensed table-bordered table-hover">
+            <thead>
+              <tr class="bg-warning">
+                  <th>Patient Name</th>
+                  <th>Chart ID</th>
+                  <th>Patient Status</th>
+                  <th>Appointment Balance</th>
+                  <th>Total Payment</th>
+                  <th>Unallocated Payment</th>
+                  <th>Current Patient Responsibility</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                  <td>Shehroz Kapoor</td>
+                    <td>TETE000001</td>
+                    <td>A</td>
+                    <td>$100.00</td>
+                    <td>$1,110.00</td>
+                    <td>$1,000.00</td>
+                    <td>-$900.00</td>
+              <tr>
+                  <td>Shehroz Kapoor</td>
+                    <td>TETE000001</td>
+                    <td>A</td>
+                    <td>$100.00</td>
+                    <td>$1,110.00</td>
+                    <td>$1,000.00</td>
+                    <td>-$900.00</td>
+              <tr>
+                  <td>Shehroz Kapoor</td>
+                    <td>TETE000001</td>
+                    <td>A</td>
+                    <td>$100.00</td>
+                    <td>$1,110.00</td>
+                    <td>$1,000.00</td>
+                    <td>-$900.00</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</div>
+
+<script>
+    $(document).ready( function () {
+        $('#day-sheet-table').DataTable();
+    } );
+</script>

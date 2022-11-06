@@ -1,0 +1,42 @@
+@mixin clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie);
+}
+
+@mixin background-gradient-top2bottom($start-color, $end-color) {
+    background-color: $start-color;
+    background-image:         linear-gradient(to bottom, $start-color, $end-color);
+    filter:            progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$start-color}', endColorstr='#{$end-color}');
+}
+
+@mixin background-gradient-left2right($start-color, $end-color) {
+    background-color: $start-color;
+    background-image:         linear-gradient(left, $start-color, $end-color);
+    filter:            progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$start-color}', endColorstr='#{$end-color}', gradientType='1');
+}
+
+@mixin border-radius-top($val) {
+    border-top-left-radius: $val;
+    border-top-right-radius: $val;
+}
+
+@mixin border-radius-bottom($val) {
+    border-bottom-left-radius: $val;
+    border-bottom-right-radius: $val;
+}
+
+@mixin input-placeholder($color) {
+    &::-webkit-input-placeholder {color: $color}
+    &:-moz-placeholder           {color: $color}
+    &::-moz-placeholder          {color: $color}
+    &:-ms-input-placeholder      {color: $color}
+}

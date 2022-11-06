@@ -1,0 +1,118 @@
+.insurance-billing-header-body select,.insurance-billing-header-body button,.insurance-billing-header-body input{
+    height: 40px;
+}
+
+.transactions .insurance-billing-header-body .update-btn{
+    margin-top: 0px;
+}
+
+.remitance-report .remittance-report-sub-options button{
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 10px;
+}
+
+.remitance-report .eob-model{
+    justify-content: space-evenly;
+}
+
+.remitance-report .eob-model{
+    width: 100%;
+    margin: 5px;
+}
+
+.remitance-report .eob-model input{
+    width: 200px;
+    height: 40px;
+}
+.remitance-report .eob-model select{
+    width: 200px;
+    height: 40px;
+}
+
+
+.remitance-report .eob-model p{
+    padding-top: 6px;
+    margin-right: 10px;
+    width: 40%;
+    text-align: left;
+}
+
+.remitance-report #addEobBatch .table{
+    table-layout: fixed;
+    width: 100%;
+    word-break: break-all;
+}
+
+.remitance-report #addEobBatch .table input{
+    width: 100%;
+}
+
+.remitance-report #addEobBatch .table select{
+    width: 100%;
+}
+
+.remitance-report #addEobBatch .table tbody tr{
+    padding: 5px;
+}
+
+#addEobBatch .eob-model{
+    justify-content: start;
+    margin-left: 100px;
+}
+#addEobBatch .eob-model p{
+    width: 20%;
+}
+.add-table-row-btn{
+    float: right;
+}
+
+.account-recievable-header-body input,.account-recievable-header-body select,.account-recievable-header-body p{
+    margin-left: 5px;
+    margin-right: 5px;
+
+}
+.account-recievable-header-body p{
+    padding-top: 8px;
+}
+
+.patient-statement-header-body .footer p{
+    margin-top: 8px;
+    margin-left: 5px;
+    margin-right: 5px;
+
+}
+.patient-statement-header-body .footer input[type='checkbox']{
+    width: 25px;
+}
+
+.Fee-Schedule .eob-model,.adjustment-master .eob-model{
+    justify-content: start;
+    margin: 10px;
+}
+
+.Fee-Schedule .eob-model p,.adjustment-master .eob-model p{
+    width: 30%;
+    margin-top: 5px;
+}
+
+.Fee-Schedule .eob-model input,.underpaid-items input,.underpaid-items-header-body input,.adjustment-master .eob-model input{
+    height: 40px;
+    border-radius: 5px;
+    width: 250px;
+}
+
+.Fee-Schedule .eob-model select,.underpaid-items-header-body select,.adjustment-master .eob-model select{
+    width: 250px;
+    height: 40px;
+}
+
+.Fee-Schedule .eob-model .cpt-hcpcs input,.adjustment-master .eob-model .cpt-hcpcs input{
+    width: 50px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.underpaid-items-header-body p{
+    width: 220px;
+}

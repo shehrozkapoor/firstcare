@@ -1,0 +1,45 @@
+.billing-summary-chart {
+    height: 600px;
+    width: 80%;
+    margin: 20px;
+}
+.billing-summary-header{
+    border: 1px solid black;
+}
+.billing-summary-header {
+    border: 1px solid #d4d4d4;
+    background-repeat: repeat-x;
+    padding-right: 20px;
+    padding-left: 20px;
+    background-color: #fff;
+    margin-top: 20px;
+    text-align: left;
+    box-shadow: 1px 1px 10px 1px grey;
+}
+
+.billing-summary-header p {
+    padding-top: 15px;
+}
+
+.card-body p {
+    color: gray;
+    font-weight: 600;
+}
+
+.fastest-card .card-body h3 {
+    color: green;
+}
+
+.average-card .card-body h3 {
+    color: rgb(92, 157, 253);
+}
+
+.slowest-card .card-body h3 {
+    color: red;
+}
+
+.payment-speed-span {
+    color: gray;
+    margin-left: 10px;
+    font-size: 12px;
+}

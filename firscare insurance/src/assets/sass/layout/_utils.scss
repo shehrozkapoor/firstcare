@@ -1,0 +1,128 @@
+/* Utils */
+.clearfix:after {
+    content:" ";
+    display:block;
+    clear:both;
+}
+
+.card {
+    background: #ffffff;
+    padding: 1rem;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.08);
+    border-radius: $borderRadius;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &.card-w-title {
+        padding-bottom: 1rem;
+    }
+
+    &.no-gutter {
+        margin-bottom: 0;
+    }
+}
+
+.nopad {
+    padding: 0;
+
+    .p-panel-content {
+        padding: 0;
+    }
+}
+
+.p-toast {
+    &.p-toast-top-right,
+    &.p-toast-top-left,
+    &.p-toast-top-center {
+       top: 80px;
+    }
+}
+
+.p-sr-only {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    word-wrap: normal !important;
+}
+
+.separator {
+    border: 1px solid $dividerColor;
+}
+
+@-webkit-keyframes fadeInDown {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -20px, 0);
+        transform: translate3d(0, -20px, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -20px, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@-webkit-keyframes fadeOutUp {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -20px, 0);
+        transform: translate3d(0, -20px, 0);
+    }
+}
+
+@keyframes fadeOutUp {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -20px, 0);
+        transform: translate3d(0, -20px, 0);
+    }
+}
+
+@keyframes fadeinmask {
+    from { opacity: 0; }
+    to   { opacity: .8; }
+}
+
+.fadeInDown {
+    animation-name: fadeInDown;
+}
+
+.fadeOutUp {
+    animation-name: fadeOutUp;
+}
+
+::-webkit-input-placeholder {color:$textSecondaryColor}
+:-moz-placeholder           {color:$textSecondaryColor}
+::-moz-placeholder          {color:$textSecondaryColor}
+:-ms-input-placeholder      {color:$textSecondaryColor}

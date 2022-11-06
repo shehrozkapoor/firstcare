@@ -1,0 +1,36 @@
+.insurance-billing-header-body{
+    min-height: 100px;
+}
+
+.header-footer select{
+    height: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 120px;
+    border-radius: 4px;
+}
+.header-footer p{
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-top: 2px;   
+}
+
+.day-sheet header .header-day-sheet button,.transactions .header-body button{
+    margin-left: 10px;
+}
+
+.cards .card{
+    width: 280px;
+    margin: 20px;
+}
+
+.cards .card p{
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.cards .card .footer{
+    font-size: 15px;
+    font-weight: 600;
+    color: black;
+}

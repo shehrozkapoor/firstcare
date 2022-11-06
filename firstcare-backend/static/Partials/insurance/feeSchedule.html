@@ -1,0 +1,173 @@
+<div class="Fee-Schedule insurance-main-div">
+    <header>
+        <div class="header-Fee-Schedule d-flex flex-row insurance-billing-headers">
+            <p>Fee-Schedule</p>
+            <button class="btn btn-light" ng-click="fee_schedule_click(1)">CPT & HCPCS</button>
+            <button class="btn btn-light" ng-click="fee_schedule_click(2)">ICD-9</button>
+            <button class="btn btn-light" ng-click="fee_schedule_click(3)">ICD-10</button>
+        </div>
+        <div class="header-body insurance-billing-header-body">
+            <div class="d-flex flex-row input-row">
+                <input type="text" class="form-control" placeholder="{$ search_place_holder $}">
+                <input type="text" class="form-control" placeholder="Payer ID" ng-show="fee_schedule_click_Class == 1">
+                <input type="text" class="form-control" placeholder="Plan Name" ng-show="fee_schedule_click_Class == 1">
+                <input type="text" class="form-control" placeholder="PickList Category">
+                <button type="button" class="btn btn-primary update-btn"><i class="bi bi-arrow-clockwise"></i><span
+                        class="upadte-text">Update</span></button>
+            </div>
+        </div>
+    </header>
+    <div class="d-flex flex-row">
+        <button class="btn btn-light m-2">Export to File</button>
+            <button type="button" class="btn btn-success m-2" data-bs-toggle="modal" data-bs-target="#add_new">
+                <i class="bi bi-plus"></i><span>Add New</span>
+            </button>
+            <div class="modal" id="add_new">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h4 class="modal-title text-success">Fee Schedule</h4>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <!-- Modal body -->
+                        <div class="modal-body">
+                            <div class="d-flex flex-row eob-model" ng-show="fee_schedule_add_click_Class == 1 || fee_schedule_add_click_Class == 2 || fee_schedule_add_click_Class == 3 || fee_schedule_add_click_Class == 4 || fee_schedule_add_click_Class == 5">
+                                <p>Code Type</p>
+                                <select name="" id="" class="form-select test-select" ng-change="fee_schedule_add_click(code.select)" ng-model="code.select">
+                                    <option value="1">CPT</option>
+                                    <option value="2">HCPCS</option>
+                                    <option value="3">Custom</option>
+                                    <option value="4">ICD-9</option>
+                                    <option value="5">ICD-10</option>
+                                </select>
+                            </div>
+                            <div class="d-flex flex-row eob-model" ng-show="fee_schedule_add_click_Class == 1 || fee_schedule_add_click_Class == 2 || fee_schedule_add_click_Class == 3 || fee_schedule_add_click_Class == 4 || fee_schedule_add_click_Class == 5">
+                                <p>Code</p>
+                                <input type="text">
+                            </div>
+                            <div class="d-flex flex-row eob-model" ng-show="fee_schedule_add_click_Class == 1 || fee_schedule_add_click_Class == 2 || fee_schedule_add_click_Class == 3">
+                                <p>Base Price</p>
+                                <input type="text" value="$0.00">
+                            </div>
+                            <div class="d-flex flex-row eob-model" ng-show="fee_schedule_add_click_Class == 1 || fee_schedule_add_click_Class == 2 || fee_schedule_add_click_Class == 3">
+                                <p>Expected Reimbursement</p>
+                                <input type="text" value="$0.00">
+                            </div>
+                            <div class="d-flex flex-row eob-model" ng-show="fee_schedule_add_click_Class == 1 || fee_schedule_add_click_Class == 2">
+                                <p>CPT/HCPCS Modifier</p>
+                                <div class="d-flex flex-row cpt-hcpcs" ng-show="fee_schedule_add_click_Class == 1 || fee_schedule_add_click_Class == 2">
+                                <input type="text">
+                                <input type="text">
+                                <input type="text">
+                                <input type="text">
+                                </div>
+                            </div>
+                            <div class="d-flex flex-row eob-model" ng-show="fee_schedule_add_click_Class == 1 || fee_schedule_add_click_Class == 2 || fee_schedule_add_click_Class == 3 || fee_schedule_add_click_Class == 4 || fee_schedule_add_click_Class == 5">
+                                <p>Office</p>
+                                <select name="" id="" class="form-select">
+                                    <option value=""></option>
+                                    <option value="">Primary Office</option>
+                                </select>
+                            </div>
+                            <div class="d-flex flex-row eob-model" ng-show="fee_schedule_add_click_Class == 1 || fee_schedule_add_click_Class == 2">
+                                <p>NDC code</p>
+                                <input type="text" value="">
+                            </div>
+                            <div class="d-flex flex-row eob-model" ng-show="fee_schedule_add_click_Class == 1 || fee_schedule_add_click_Class == 2">
+                                <p>NDC Quantity</p>
+                                <input type="text" placeholder="1.0000">
+                            </div>
+                            <div class="d-flex flex-row eob-model" ng-show="fee_schedule_add_click_Class == 1 || fee_schedule_add_click_Class == 2">
+                                <p>NDC Unit</p>
+                                <select name="" id="" class="form-select">
+                                    <option value="">F2 International Unit</option>
+                                    <option value="">GR(GRAM)</option>
+                                    <option value="">ME(MILLIGRAM)</option>
+                                    <option value="">ML(MILLILITER)</option>
+                                    <option value="">UN(UNIT)</option>
+                                </select>
+                            </div>
+                            <div class="d-flex flex-row eob-model" ng-show="fee_schedule_add_click_Class == 1 || fee_schedule_add_click_Class == 2">
+                                <p>Payer ID</p>
+                                <input type="text" >
+                            </div>
+                            <div class="d-flex flex-row eob-model" ng-show="fee_schedule_add_click_Class == 1 || fee_schedule_add_click_Class == 2">
+                                <p>Plan Name</p>
+                                <input type="text" >
+                            </div>
+                            <div class="d-flex flex-row eob-model" ng-show="fee_schedule_add_click_Class == 1 || fee_schedule_add_click_Class == 2 || fee_schedule_add_click_Class == 3 || fee_schedule_add_click_Class == 4 || fee_schedule_add_click_Class == 5">
+                                <p>Custom Description</p>
+                                <input type="text" >
+                            </div>
+                            <div class="d-flex flex-row eob-model" ng-show="fee_schedule_add_click_Class == 1 || fee_schedule_add_click_Class == 2 || fee_schedule_add_click_Class == 3 || fee_schedule_add_click_Class == 4 || fee_schedule_add_click_Class == 5">
+                                <p>PickList Category</p>
+                                <input type="text" >
+                            </div>
+                        </div>
+                        <!-- Modal footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="table" style="margin-top: 10px;">
+        <table id="Fee-Schedule" class="table table-striped table-condensed table-bordered table-hover"
+            ng-show="fee_schedule_click_Class==1">
+            <thead>
+                <tr class="bg-warning">
+                    <th>Procedure</th>
+                    <th>Type</th>
+                    <th>Office</th>
+                    <th>Insurance Payer</th>
+                    <th>Price</th>
+                    <th>Allowed</th>
+                    <th>Modifier</th>
+                    <th>NDC code</th>
+                    <th>NDC unit</th>
+                    <th>Payer ID</th>
+                    <th>PickList</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        <table id="Fee-Schedule" class="table table-striped table-condensed table-bordered table-hover"
+            ng-show="fee_schedule_click_Class==2 || fee_schedule_click_Class==3">
+            <thead>
+                <tr class="bg-warning">
+                    <th>{$ search_place_holder|uppercase $}</th>
+                    <th>type</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+
+</script>
